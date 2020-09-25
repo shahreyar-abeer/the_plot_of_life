@@ -1,4 +1,4 @@
-# The plot of life
+# The Resume Plot
 
 A ggplot2 inspired by the book Storytelling with data
 

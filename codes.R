@@ -16,12 +16,12 @@ trace(grDevices::png, exit = quote({
 
 ## font settings
 showtext_auto()
-font_add_google("IBM Plex Sans Condensed", "ibm", regular.wt = 400)
+font_add_google("IBM Plex Sans Condensed", "ibm", regular.wt = 300)
 
 ## summary text, as given in resumes.
 summary = "SUMMARY
 R developer and aficionado, hoping to become a connoisseur.
-Have a thing for Shiny. Looking to work with Shiny in production.
+Have a thing for Shiny. Looking to work with it in production.
 I believe that a man's measure is his will, not his degree."
 
 ## creating the data frame by hand
@@ -42,7 +42,7 @@ df = data.frame(
 
 
 ## font-size in annotations
-size2 = 5.5
+size2 = 6
 
 ## the plot
 p1 <- ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
@@ -109,49 +109,49 @@ p1 <- ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
   #scale_x_continuous(limits = c(0, 70), expand = expansion(mult = 0)) +
   xlim(0, 30) +
   #ylim(1985, 2050) +
-  annotate(geom = "text", x = 5.2, y = 2023.2, label = "Resume Plot of Zauad Shahreer Abeer",
+  annotate(geom = "text", x = 5.2, y = 2022.2, label = "Resume Plot of Zauad Shahreer Abeer",
+           hjust = .01, family = "ibm", size = 6.5, color = "#918D8F") +
+  
+  annotate(geom = "text", x = 5.2, y = 2021.2, label = "R & Shiny Developer",
            hjust = .01, family = "ibm", size = 6, color = "#918D8F") +
   
-  annotate(geom = "text", x = 5.2, y = 2022, label = "R & Shiny Developer",
-           hjust = .01, family = "ibm", size = 6, color = "#918D8F") +
-  
-  annotate(geom = "text", x = 2.6, y = 2001, label = "2006, Maestros",
+  annotate(geom = "text", x = 2.6, y = 2001, label = "2006, Maestros, \n School, Most of what I'm made of",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 3.7, y = 2003, label = "2011 - 13, NDC",
+  annotate(geom = "text", x = 3.7, y = 2003, label = "2011 - 13, NDC, \n High school, Played a lot of football, a bit of basketball",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 4.8, y = 2005, label = "2013 - 18, Graduation in Statistics",
+  annotate(geom = "text", x = 4.8, y = 2005, label = "2013 - 18, Graduation in Statistics, University of Dhaka, \n Mainly theory based, Not my type",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 5.9, y = 2007, label = "2013, Cavaliers",
+  annotate(geom = "text", x = 5.9, y = 2007, label = "2013, Cavaliers, \n University, Those who helped shape me",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 7, y = 2009, label = "2014, Introduced to R, liked Python better",
+  annotate(geom = "text", x = 7, y = 2009, label = "2015, Introduced to R, liked Python better, \n Started taking Online courses in Data Science",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 8.1, y = 2011, label = "2017, First Shiny App",
+  annotate(geom = "text", x = 8.1, y = 2011, label = "2017, First Rmarkdown Report, First Shiny App, \n Started liking R",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 9.2, y = 2013, label = "2017, Freelance Data Analyst",
+  annotate(geom = "text", x = 9.2, y = 2013, label = "2017, Freelance Data Analyst, \n Primarily took projects that involved R",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 10.3, y = 2015, label = "2018 - 19, Data Analyst/ Statistician @ Nadine West",
+  annotate(geom = "text", x = 10.3, y = 2015, label = "2018 - 19, Data Analyst/ Statistician @ Nadine West, \n Developed 2 shiny apps for doing exploratory analysis",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 11.4, y = 2017, label = "2019, Started with git properly, afraid of merge conflicts",
+  annotate(geom = "text", x = 11.4, y = 2017, label = "2019, Started with git properly, afraid of merge conflicts, \n From Data Anlayst to R Developer",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 12.5, y = 2019, label = "2020, Shiny Contest Honorable Mentions,\n Shiny for Production with {golem}, first CRAN package*",
+  annotate(geom = "text", x = 12.5, y = 2019, label = "2020, Shiny Contest Honorable Mention,\n Shiny for Production with {golem}, first CRAN package*",
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
   annotate(geom = "text", x = 3.2, y = 1997, label = summary,
            hjust = 0, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 1.1, y = 1993, label = '"I like the {tidyverse} ecosystem, but {data.table} just feels right."',
+  annotate(geom = "text", x = 1.1, y = 1993, label = '"I like {dplyr}, but {data.table} just feels right."',
            hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
   
-  annotate(geom = "text", x = 13, y = 1991.5, label = "*Scheduled for October, Inn Shaa Allah",
+  annotate(geom = "text", x = 13, y = 1992.1, label = "*Scheduled for October, Inn Shaa Allah",
            hjust = .01, family = "ibm", size = (size2 - 1.5), color = "#918D8F") +
   
   #coord_cartesian(xlim = c(0, 40), ylim = c(1985, 2040), expand = FALSE) +
@@ -171,7 +171,7 @@ p1 <- ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
 
 
 ## creating the image using magick
-fig <- image_graph(width = 700, height = 700)
+fig <- image_graph(width = 700, height = 900)
 p1
 dev.off()
 
@@ -180,7 +180,7 @@ hex_raw <- image_read("http://hexb.in/hexagons/ggplot2.png")
 hex <- image_scale(hex_raw, "70")
 
 ## adding the two
-fig2 <- image_composite(fig, hex, offset="+550+440", operator = "blend")
+fig2 <- image_composite(fig, hex, offset="+550+600", operator = "blend")
 fig2 <- image_trim(fig2)
 
 ## saving the image.

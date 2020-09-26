@@ -14,9 +14,14 @@ trace(grDevices::png, exit = quote({
   showtext::showtext_begin()
 }), print = FALSE)
 
-## font settings
+## font & background settings
 showtext_auto()
 font_add_google("IBM Plex Sans Condensed", "ibm", regular.wt = 300)
+text_color <- "#918D8F"
+bg_color <- "#07283C"
+
+## font-size in annotations
+size2 = 6
 
 ## summary text, as given in resumes.
 summary = "SUMMARY
@@ -41,8 +46,7 @@ df = data.frame(
 )
 
 
-## font-size in annotations
-size2 = 6
+
 
 ## the plot
 p1 <- ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
@@ -110,49 +114,49 @@ p1 <- ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
   xlim(0, 30) +
   #ylim(1985, 2050) +
   annotate(geom = "text", x = 5.2, y = 2022.2, label = "Resume Plot of Zauad Shahreer Abeer",
-           hjust = .01, family = "ibm", size = 6.5, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = 6.5, color = text_color) +
   
   annotate(geom = "text", x = 5.2, y = 2021.2, label = "R & Shiny Developer",
-           hjust = .01, family = "ibm", size = 6, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 2.6, y = 2001, label = "2006, Maestros, \n School, Most of what I'm made of",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 3.7, y = 2003, label = "2011 - 13, NDC, \n High school, Played a lot of football, a bit of basketball",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 4.8, y = 2005, label = "2013 - 18, Graduation in Statistics, University of Dhaka, \n Mainly theory based, Not my type",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 5.9, y = 2007, label = "2013, Cavaliers, \n University, Those who helped shape me",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 7, y = 2009, label = "2015, Introduced to R, liked Python better, \n Started taking Online courses in Data Science",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 8.1, y = 2011, label = "2017, First Rmarkdown Report, First Shiny App, \n Started liking R",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 9.2, y = 2013, label = "2017, Freelance Data Analyst, \n Primarily took projects that involved R",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 10.3, y = 2015, label = "2018 - 19, Data Analyst/ Statistician @ Nadine West, \n Developed 2 shiny apps for doing exploratory analysis",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 11.4, y = 2017, label = "2019, Started with git properly, afraid of merge conflicts, \n From Data Anlayst to R Developer",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 12.5, y = 2019, label = "2020, Shiny Contest Honorable Mention,\n Shiny for Production with {golem}, first CRAN package*",
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 3.2, y = 1997, label = summary,
-           hjust = 0, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = 0, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 1.1, y = 1993, label = '"I like {dplyr}, but {data.table} just feels right."',
-           hjust = .01, family = "ibm", size = size2, color = "#918D8F") +
+           hjust = .01, family = "ibm", size = size2, color = text_color) +
   
   annotate(geom = "text", x = 13, y = 1992.1, label = "*Scheduled for October, Inn Shaa Allah",
-           hjust = .01, family = "ibm", size = (size2 - 1.5), color = "#918D8F") +
+           hjust = .01, family = "ibm", size = (size2 - 1.5), color = text_color) +
   
   #coord_cartesian(xlim = c(0, 40), ylim = c(1985, 2040), expand = FALSE) +
   theme(
@@ -165,8 +169,8 @@ p1 <- ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
     axis.title.y = element_blank(),
     panel.border = element_blank(),
     panel.grid = element_blank(),
-    plot.background = element_rect(fill = "#07283C"),
-    panel.background = element_rect(fill = "#07283C")
+    plot.background = element_rect(fill = bg_color),
+    panel.background = element_rect(fill = bg_color)
   )
 
 

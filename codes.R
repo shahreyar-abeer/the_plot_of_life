@@ -181,6 +181,7 @@ hex <- image_scale(hex_raw, "70")
 
 ## adding the two
 fig2 <- image_composite(fig, hex, offset="+550+440", operator = "blend")
+fig2 <- image_trim(fig2)
 
 ## saving the image.
 image_write(fig2, "../my_blog/themes/hugo-ivy/static/img/the-resume-plot.jpeg", format = "jpeg")
